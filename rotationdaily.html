@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "surface-container-high": "#e9e8e6",
+                        "primary-container": "#1c1b1b",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container-low": "#f4f3f1",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-fixed": "#ece1d2",
+                        "background": "#faf9f7",
+                        "on-surface": "#1a1c1b",
+                        "surface-container-highest": "#e3e2e0",
+                        "outline-variant": "#c4c7c7",
+                        "on-secondary-fixed-variant": "#4c463b",
+                        "tertiary-container": "#1b1c1b",
+                        "on-tertiary-container": "#848482",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#1b1c1b",
+                        "tertiary-fixed-dim": "#c7c6c4",
+                        "surface": "#faf9f7",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e3e2e0",
+                        "tertiary": "#000000",
+                        "on-background": "#1a1c1b",
+                        "secondary-container": "#e9decf",
+                        "on-secondary-fixed": "#201b12",
+                        "inverse-on-surface": "#f1f1ef",
+                        "surface-bright": "#faf9f7",
+                        "on-surface-variant": "#444748",
+                        "on-primary-container": "#858383",
+                        "on-secondary-container": "#696255",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e3e2e0",
+                        "surface-dim": "#dadad8",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-container": "#efeeec",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary": "#655d51",
+                        "inverse-surface": "#2f3130",
+                        "inverse-primary": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "outline": "#747878",
+                        "secondary-fixed-dim": "#cfc5b6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "section-gap": "120px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "label-uppercase": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "stat-value": ["Noto Serif"],
+                        "display-lg": ["Noto Serif"],
+                        "title-sm": ["Noto Serif"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "label-uppercase": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "stat-value": ["24px", {"lineHeight": "1", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "title-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #faf9f7;
+        }
+    </style>
+</head>
+<body class="font-body-lg text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#FDFCFB] dark:bg-stone-950 border-b-[0.5px] border-stone-200 dark:border-stone-800 shadow-[0_4px_20px_rgba(0,0,0,0.04)] fixed top-0 w-full z-50 transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="font-serif text-2xl font-light tracking-[0.2em] text-stone-900 dark:text-stone-50">WATCH LIST</div>
+<nav class="hidden md:flex gap-12">
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Journal</a>
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Showroom</a>
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-900 dark:text-stone-50 border-b border-stone-900 dark:border-stone-50 pb-1 font-medium" href="#">Grails</a>
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Vault</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-stone-900 cursor-pointer hover:opacity-70 transition-opacity duration-300" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-stone-900 cursor-pointer hover:opacity-70 transition-opacity duration-300" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pt-[120px] max-w-[1440px] mx-auto px-8 md:px-16">
+<!-- Hero Section -->
+<section class="mb-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg mb-6 text-stone-900">Current Rotation</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg italic">
+                        "Some pieces are collected. Others become part of the ritual."
+                    </p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-uppercase text-label-uppercase text-outline mb-2">LAST UPDATED</span>
+<span class="font-headline-md text-headline-md text-stone-900">OCT 24, 2024</span>
+</div>
+</div>
+<!-- Daily Companion Feature Card -->
+<div class="bg-surface-container-low border border-outline-variant p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 space-y-8">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="w-2 h-2 bg-[#4a6741] rounded-full"></span>
+<span class="font-label-uppercase text-label-uppercase text-stone-600">DAILY COMPANION</span>
+</div>
+<h2 class="font-display-lg text-headline-md mb-2">Patek Philippe Calatrava</h2>
+<p class="font-body-sm text-body-sm text-stone-500">Ref. 5119J — Yellow Gold</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-stone-400 block mb-2">WEAR FREQUENCY</span>
+<span class="font-stat-value text-stat-value">68% <span class="text-sm text-stone-400">Monthly</span></span>
+</div>
+<div>
+<span class="font-label-uppercase text-label-uppercase text-stone-400 block mb-2">CONSECUTIVE DAYS</span>
+<span class="font-stat-value text-stat-value">04</span>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/30">
+<span class="font-label-uppercase text-label-uppercase text-stone-400 block mb-4">ACTIVITY HEATMAP (30D)</span>
+<div class="flex gap-1.5 overflow-x-auto pb-2">
+<!-- Heatmap mockup -->
+<div class="w-6 h-6 bg-stone-200"></div><div class="w-6 h-6 bg-stone-300"></div><div class="w-6 h-6 bg-stone-900"></div>
+<div class="w-6 h-6 bg-stone-900"></div><div class="w-6 h-6 bg-stone-100"></div><div class="w-6 h-6 bg-stone-900"></div>
+<div class="w-6 h-6 bg-stone-900"></div><div class="w-6 h-6 bg-stone-400"></div><div class="w-6 h-6 bg-stone-900"></div>
+<div class="w-6 h-6 bg-stone-900"></div><div class="w-6 h-6 bg-stone-900"></div><div class="w-6 h-6 bg-stone-200"></div>
+<div class="w-6 h-6 bg-stone-900"></div><div class="w-6 h-6 bg-stone-900"></div><div class="w-6 h-6 bg-stone-100"></div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 h-[500px] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro close-up photograph of a vintage gold luxury watch with a white dial and black Roman numerals resting on a textured ivory linen surface. The lighting is soft and natural, coming from the side to highlight the delicate polished gold bezel and the supple leather grain of the strap. The composition is artistic and minimalist, reflecting a quiet luxury aesthetic with warm beige and stone tones. The mood is intimate and sophisticated, suggesting a personal morning ritual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIEQUvruY-9fRmmxApmwzTp-3bsm3ydeGs46AMa4keQHaSx07KjraBD4E7VL4BWtyII5RnSEq4JRqwtxdJgOF3zC7p-YqKzSCf-qgTl5pg9sI7GCAn3vMcL8b7N6R_vtjaamu7U1QQEVXHV3mRhe1jQdRaQyJ6LELaNeuBltSfcVhyWI8kC3fe-Q272qMnBGojscL0F4PzlDE9SyX47XWPVSSqZD3HGJik62L0NsxsnKrv6Kz8VeKg1E_05kCAjvnnBYG5lq4qdZE"/>
+</div>
+</div>
+</section>
+<!-- Secondary Rotation Grid -->
+<section class="mb-section-gap">
+<div class="flex items-center justify-between mb-12">
+<h3 class="font-headline-md text-headline-md">The Ensemble</h3>
+<span class="font-label-uppercase text-label-uppercase text-stone-400">3 ACTIVE PIECES</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+<!-- Watch Card 1 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low mb-8 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="An elegant stainless steel sports watch with a black dial and integrated bracelet, photographed in a high-contrast editorial style. The watch is placed on a dark grey slate background, catching sharp crystalline reflections on its sapphire glass and brushed steel surfaces. The visual aesthetic is sharp, precise, and authoritative, using a monochromatic palette to emphasize the craftsmanship and engineering of the timepiece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCsnnGz4EWwVxf6SCVx6kIXm1vbhGWoyc0FIRXNvIT16W87ssX4sSaDdfbxCLvPl6k7jnKZrD4RgMWljT36oWTmSRfEE5s_wnZ6owU-4N6Qqx3Bx1B_2aW-Iai8tw7xmWFlhwIAI37A4kkysp9nweciqWWLcGJM5ZBIZUP0FLZXICyfjArzFIuSt9Rgovv_j1aJrU8uscZyzaWWml7WuhLQQhPqorge-z0HFETv16vaGa6itY6lRx0ag-jw_FzW_SnsD6isB1p_v0"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-sm text-title-sm">Rolex Explorer II</h4>
+<p class="font-body-sm text-stone-500">Ref. 216570</p>
+</div>
+<span class="font-label-uppercase text-[10px] py-1 px-2 border border-stone-200">ACTIVE</span>
+</div>
+<div class="grid grid-cols-2 py-4 border-y border-outline-variant/20">
+<div>
+<span class="font-label-uppercase text-[10px] text-stone-400 block">LAST WORN</span>
+<span class="font-body-sm">Yesterday</span>
+</div>
+<div>
+<span class="font-label-uppercase text-[10px] text-stone-400 block">FREQUENCY</span>
+<span class="font-body-sm">4.2x / wk</span>
+</div>
+</div>
+<p class="font-body-sm text-stone-600 italic leading-relaxed">
+                            "The weekend standard. Rugged enough for the outdoors, refined enough for the studio."
+                        </p>
+</div>
+</div>
+<!-- Watch Card 2 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low mb-8 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A minimalist dress watch with an ultra-thin silver case and a navy blue sunray dial, shown in a low-light studio setting. The lighting creates a dramatic shadow play, highlighting the slender hands and hour markers. The aesthetic is incredibly clean and modern, favoring a deep blue and cool silver palette. The mood is one of understated elegance and professional precision, suitable for a quiet luxury brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvGtLNoQMzjmzeDY7YUuFcylP8hcRcwbjG4P4XZO_gTKSCDplm3icTa-ONwvzcreOKB_apOyIxCJAvJ96eXd53NCq-xDHJEkI1uYp6FgH17XcZyJO_PmDEmAtkgJ9aIP1lUrnAdBIL22WTx2l22ja83RVYw4kJdDSoTQNq79gF4i9sXjPZ1yg34Y9nhb0_434wMvb5AijegYPqFBW1r5vlyHC6bvpyhhi-3OSf50eCQq6PhZDHnsLdX-qQtU-Q-S0ecUR2gO40EuQ"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-sm text-title-sm">Cartier Tank Louis</h4>
+<p class="font-body-sm text-stone-500">Ref. WGTA0011</p>
+</div>
+<span class="font-label-uppercase text-[10px] py-1 px-2 border border-stone-200">RESTING</span>
+</div>
+<div class="grid grid-cols-2 py-4 border-y border-outline-variant/20">
+<div>
+<span class="font-label-uppercase text-[10px] text-stone-400 block">LAST WORN</span>
+<span class="font-body-sm">Oct 12</span>
+</div>
+<div>
+<span class="font-label-uppercase text-[10px] text-stone-400 block">FREQUENCY</span>
+<span class="font-body-sm">1.5x / wk</span>
+</div>
+</div>
+<p class="font-body-sm text-stone-600 italic leading-relaxed">
+                            "Reserved for evenings when the conversation is as fine as the craft."
+                        </p>
+</div>
+</div>
+<!-- Watch Card 3 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low mb-8 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A top-down view of a mechanical watch with an open case-back, revealing the intricate gears and oscillating weight. The watch rests on a dark walnut wood surface, surrounded by soft, warm ambient light. The scene is detailed and rich in texture, focusing on the internal craftsmanship of Swiss watchmaking. The color story is dominated by warm wood tones, polished brass, and steel, evoking a sense of legacy and engineering excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGo1x4nJK6MKS703ZLKwkH2UzwKNXD4ybvVqCwyT3h2hbG4L4vhDFm2X__pPdWiqt2lBblkkLrjCo-W3fKM4XQe4eIQHKX4Qi_Lo1teSqFh6LnOUG4EFOOYDEM6wfAhYUavOIVjIw68sybdlU78ceFsS32GcjfzlkzQSY2SLu53iMLn7X2MYltRD8QCElJaJuKToqJ2iCFIJ7qDbUIpiRBYqaU6r-O6tGren3iy5YaeZQ6DkXO1A1LM5lI-h3vb2ZgFU19aCeKr2Y"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-sm text-title-sm">Omega Speedmaster</h4>
+<p class="font-body-sm text-stone-500">'Moonwatch' Professional</p>
+</div>
+<span class="font-label-uppercase text-[10px] py-1 px-2 border border-stone-200">ACTIVE</span>
+</div>
+<div class="grid grid-cols-2 py-4 border-y border-outline-variant/20">
+<div>
+<span class="font-label-uppercase text-[10px] text-stone-400 block">LAST WORN</span>
+<span class="font-body-sm">Oct 22</span>
+</div>
+<div>
+<span class="font-label-uppercase text-[10px] text-stone-400 block">FREQUENCY</span>
+<span class="font-body-sm">3.0x / wk</span>
+</div>
+</div>
+<p class="font-body-sm text-stone-600 italic leading-relaxed">
+                            "The tactile pleasure of the manual wind. A morning habit that grounds the day."
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Ritual Section (Asymmetric Bento) -->
+<section class="mb-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 h-auto lg:h-[600px]">
+<div class="lg:col-span-4 bg-surface-container p-12 flex flex-col justify-between">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-stone-500 mb-6 block">THE PHILOSOPHY</span>
+<h3 class="font-headline-md text-headline-md mb-6 leading-tight">Curating the Seconds</h3>
+<p class="font-body-sm text-stone-600">A rotation is not merely a schedule; it is a reflection of current headspace. We choose what to wear based on who we intend to be that day.</p>
+</div>
+<button class="w-fit px-8 py-4 border border-stone-900 font-label-uppercase text-[10px] hover:bg-stone-900 hover:text-white transition-all duration-300">READ THE JOURNAL</button>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="A lifestyle photo of a man's hand adjusting the cuff of a crisp white shirt, revealing a luxury watch on the wrist. The scene is shot in a sun-drenched library with soft bokeh in the background. The lighting is ethereal and high-key, creating a clean light-mode aesthetic. The color palette is dominated by whites, warm wood tones, and the metallic silver of the watch, capturing a moment of quiet personal reflection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMedHgexWMrF64jDfz07kXLDZhyxqs0uw4BfyP7MX15bpS6A7YAdYk0Jf0EUtpWTbLdjkDMFy-oPpmHWi4vp8cFAVcjnC3cgdRgby8eqgaUh7g7QaRGxx25MXphPP90hELjn9ULwx1kuE3_DMWN3UsT8vu9ENcDLyA5C2s-96XN354do-zEyjZWpb7DPhMWy2hvUxPWywAXexbjdbmK5Yr3jdpK2gw6suMY6_h5RDn8mgUY_IhsHNJmf0hU46Gvo_yBVlqN2Lfe8g"/>
+<div class="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-all duration-500"></div>
+</div>
+<div class="relative overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="A close-up of a wooden valet tray holding a watch, a set of keys, and a fountain pen. The items are arranged with military precision on a dark leather mat. The lighting is warm and directional, emphasizing the textures of the leather, wood, and metal. The aesthetic is grounded and masculine, focusing on the objects that define a modern gentleman's daily ritual in a sophisticated palette of brown, black, and gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP3u1WPYgY264G6Z-z3npIUarUclJAVfM8KGWCJ8OxBKAmPMpqf6qB7Tk95Va3gA48BDNP4DhJECmGVRA_DJvq6RRpL_s1MeEo0CdnFKzuAJUQQA3zJvKW3D6k8AZNkkQ1fdhYn_FYQYmC6H4p2cXDdyzZtJz7F5n5P_45oQmrj9VcIoLyTIbQx88MyTYTkQ-CssyhkH3NxXJzS-zi5pJam75OMTqY3RNKeSy2rF0ThrgLUhs7cn5LIChOm57ffCGkS6vOnCU8khI"/>
+<div class="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#FDFCFB] dark:bg-stone-950 border-t-[0.5px] border-stone-200 dark:border-stone-800 opacity-80 hover:opacity-100 transition-all duration-500">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-20 mt-32 max-w-[1440px] mx-auto">
+<div class="font-serif italic text-stone-300 text-2xl mb-8 md:mb-0">WATCH LIST</div>
+<div class="flex flex-col md:flex-row items-center gap-12">
+<nav class="flex gap-8">
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Privacy</a>
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Provenance</a>
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Contact</a>
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Terms</a>
+</nav>
+<div class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 dark:text-stone-600">
+                    © 2024 WATCH LIST. THE ARCHIVE OF EXCELLENCE.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

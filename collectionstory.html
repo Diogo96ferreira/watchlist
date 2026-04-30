@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#000000",
+                    "surface-container-high": "#e9e8e6",
+                    "primary-container": "#1c1b1b",
+                    "surface-tint": "#5f5e5e",
+                    "surface-container-low": "#f4f3f1",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#1c1b1b",
+                    "secondary-fixed": "#ece1d2",
+                    "background": "#faf9f7",
+                    "on-surface": "#1a1c1b",
+                    "surface-container-highest": "#e3e2e0",
+                    "outline-variant": "#c4c7c7",
+                    "on-secondary-fixed-variant": "#4c463b",
+                    "tertiary-container": "#1b1c1b",
+                    "on-tertiary-container": "#848482",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#1b1c1b",
+                    "tertiary-fixed-dim": "#c7c6c4",
+                    "surface": "#faf9f7",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e3e2e0",
+                    "tertiary": "#000000",
+                    "on-background": "#1a1c1b",
+                    "secondary-container": "#e9decf",
+                    "on-secondary-fixed": "#201b12",
+                    "inverse-on-surface": "#f1f1ef",
+                    "surface-bright": "#faf9f7",
+                    "on-surface-variant": "#444748",
+                    "on-primary-container": "#858383",
+                    "on-secondary-container": "#696255",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#464746",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#e3e2e0",
+                    "surface-dim": "#dadad8",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-container": "#efeeec",
+                    "primary-fixed": "#e5e2e1",
+                    "secondary": "#655d51",
+                    "inverse-surface": "#2f3130",
+                    "inverse-primary": "#c8c6c5",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "outline": "#747878",
+                    "secondary-fixed-dim": "#cfc5b6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "section-gap": "120px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Noto Serif"],
+                    "label-uppercase": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "stat-value": ["Noto Serif"],
+                    "display-lg": ["Noto Serif"],
+                    "title-sm": ["Noto Serif"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "label-uppercase": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "stat-value": ["24px", {"lineHeight": "1", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "title-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #faf9f7;
+            color: #1a1c1b;
+        }
+        .timeline-line {
+            width: 1px;
+            background-color: #c4c7c7;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="font-body-lg">
+<!-- TopAppBar -->
+<header class="bg-[#FDFCFB] dark:bg-stone-950 border-b-[0.5px] border-stone-200 dark:border-stone-800 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="font-serif text-2xl font-light tracking-[0.2em] text-stone-900 dark:text-stone-50">WATCH LIST</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Journal</a>
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Showroom</a>
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Grails</a>
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-900 dark:text-stone-50 border-b border-stone-900 dark:border-stone-50 pb-1 font-medium" href="#">Vault</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-stone-900 dark:text-stone-100 cursor-pointer transition-opacity duration-300 hover:opacity-70" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-stone-900 dark:text-stone-100 cursor-pointer transition-opacity duration-300 hover:opacity-70" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
+<!-- Hero Header -->
+<section class="mb-24 text-center md:text-left">
+<h1 class="font-display-lg text-display-lg mb-6 tracking-tight">My Collection Story</h1>
+<p class="font-headline-md text-title-sm text-secondary italic opacity-80">A journey through time, taste, and craftsmanship.</p>
+</section>
+<!-- Quote Block -->
+<section class="mb-32 max-w-4xl mx-auto border-y border-outline-variant/30 py-16 text-center">
+<div class="relative inline-block">
+<span class="font-display-lg text-[80px] absolute -top-12 -left-12 text-surface-container-highest select-none">“</span>
+<p class="font-headline-md text-headline-md italic leading-relaxed text-on-surface">
+                    Every collection begins with a single memory.
+                </p>
+<span class="font-display-lg text-[80px] absolute -bottom-20 -right-12 text-surface-container-highest select-none">”</span>
+</div>
+</section>
+<!-- Vertical Timeline -->
+<section class="relative">
+<!-- Central Line -->
+<div class="timeline-line hidden md:block"></div>
+<!-- Entry 1: 2014 -->
+<div class="relative grid md:grid-cols-2 gap-16 mb-40 items-center">
+<div class="md:text-right">
+<span class="font-label-uppercase text-label-uppercase text-outline block mb-4">2014</span>
+<h3 class="font-headline-md text-headline-md mb-4">Patek Philippe Calatrava</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md md:ml-auto leading-relaxed">
+                        The piece that started it all. A graduation gift from my father, representing the transition into a new chapter of professional responsibility and the weight of legacy.
+                    </p>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden border border-outline-variant/20 shadow-sm">
+<img alt="Luxury watch" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A close-up studio photograph of a classic Patek Philippe Calatrava watch with a polished gold case and a deep brown leather strap. The lighting is soft and cinematic, highlighting the elegant circular curves of the timepiece against a minimalist ivory background. The mood is sophisticated and timeless, evoking a sense of quiet luxury and heritage craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi_Y4EVlee0te9aCrbTTUfP4y3RKYzQzBhg714jZSJeh7555nX3RVS7EBm_kVsbA129t2Oq84RxUc-W_vTsrQG7Rj4ZYqbkO3Sn-4Nd5FwQjtCm1YUAw-Bs9e2XSmv76IqQHSrOHSP6bgVnex3hXdEJH-fRKOk1euwdEUzl90P0EyaAXk6cy1ShE1nw2Y-JWg0P6lYJEiXZTAFkliyXibJucRWq_6JX_qJ2-oC9L0rl0SglhhA-Don4i4g8W2YQ_cilPBnnMihxLQ"/>
+</div>
+</div>
+<!-- Node -->
+<div class="hidden md:block absolute left-1/2 top-4 -translate-x-1/2 w-3 h-3 bg-primary border-4 border-background rounded-full z-10"></div>
+</div>
+<!-- Entry 2: 2018 -->
+<div class="relative grid md:grid-cols-2 gap-16 mb-40 items-center">
+<div class="order-2 md:order-1">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden border border-outline-variant/20 shadow-sm">
+<img alt="Professional watch" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="An atmospheric editorial shot of a stainless steel Rolex Submariner resting on a stack of high-end design magazines. The lighting is bright and high-key, emphasizing the brushed texture of the steel and the deep black ceramic bezel. The composition is clean and modern, following a Swiss grid aesthetic with plenty of negative space. The overall feel is professional, rugged, and refined." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkX3S2YhF1RLQvyCunuw9iJ31j5LjZInp11lN6Q2zO4-UTcI58_B1wjT7RRyU6yGlglVv3ftbEPa_tJZhxKtRZBowWohqyPGyV_kWSBQ6JQlJOg-6sg8TLsMDfnWGxsQg2qzXeRYR70XqM6HCvws6TnloV2q-Y4N3yBiTmoCotD2AmCXmv7W_2TklhtPQZ6QevVgv8j4pw_wTJ1MBaB4fCEOgrRQp27yVqLYOiSMtRVCw7bOyzxJ9Elc3RdwFUYvJN12VBNVmjPEQ"/>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<span class="font-label-uppercase text-label-uppercase text-outline block mb-4">2018</span>
+<h3 class="font-headline-md text-headline-md mb-4">Rolex Submariner 114060</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md leading-relaxed">
+                        Acquired to commemorate the founding of my design studio. It represents resilience, the 'no-date' purity of vision, and the pursuit of a tool that never fails.
+                    </p>
+</div>
+<!-- Node -->
+<div class="hidden md:block absolute left-1/2 top-4 -translate-x-1/2 w-3 h-3 bg-primary border-4 border-background rounded-full z-10"></div>
+</div>
+<!-- Entry 3: 2023 -->
+<div class="relative grid md:grid-cols-2 gap-16 items-center">
+<div class="md:text-right">
+<span class="font-label-uppercase text-label-uppercase text-outline block mb-4">2023</span>
+<h3 class="font-headline-md text-headline-md mb-4">A. Lange &amp; Söhne Zeitwerk</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md md:ml-auto leading-relaxed">
+                        The ultimate expression of mechanical mastery. A testament to complex simplicity—reading time exactly as it is, without the noise of tradition's sweeping hands.
+                    </p>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden border border-outline-variant/20 shadow-sm">
+<img alt="Masterpiece watch" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A highly detailed macro photograph of the intricate dial of an A. Lange &amp; Söhne Zeitwerk watch. The shot focuses on the jumping hour and minute apertures, revealing the precision of German engineering. The lighting is dramatic and directional, creating soft shadows that give depth to the matte silver dial and polished elements. The aesthetic is extremely minimalist and luxury editorial, featuring a muted monochromatic palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGJOcV7yYh9laZeYEJdKYQasfnuyL3uQfPzdhrYQHu2fO6ftr8fy7KOs3tUpcRBiDqIJfeTnXEbiGXveLtrLwTy6B1_aLt8e2RBBgkS9ttadKcNii60YPeE1ZLv5t5w58R_jPR2urgtPG6O6zky3l_Z7UnA5io195PlCbvXoD6VBVXnM2MI6ncbuk-tWZnXLbN8OjpLKFJN1ca4cMHI-MOHbN2OS6NUbyjrJAWB1MhSqrvYhpaxdpIGo62SbThmpvpNImC-Nj7rnU"/>
+</div>
+</div>
+<!-- Node -->
+<div class="hidden md:block absolute left-1/2 top-4 -translate-x-1/2 w-3 h-3 bg-primary border-4 border-background rounded-full z-10"></div>
+</div>
+</section>
+<!-- Stats Grid / Highlights -->
+<section class="mt-section-gap grid grid-cols-2 md:grid-cols-4 gap-gutter border-t border-outline-variant/20 pt-16">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-outline mb-2 block">Years of Passion</span>
+<p class="font-stat-value text-stat-value text-on-surface">10</p>
+</div>
+<div>
+<span class="font-label-uppercase text-label-uppercase text-outline mb-2 block">Unique References</span>
+<p class="font-stat-value text-stat-value text-on-surface">14</p>
+</div>
+<div>
+<span class="font-label-uppercase text-label-uppercase text-outline mb-2 block">Primary Metal</span>
+<p class="font-stat-value text-stat-value text-on-surface">Platinum</p>
+</div>
+<div>
+<span class="font-label-uppercase text-label-uppercase text-outline mb-2 block">Next Acquisition</span>
+<p class="font-stat-value text-stat-value text-on-surface">Vacheron</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#FDFCFB] dark:bg-stone-950 border-t-[0.5px] border-stone-200 dark:border-stone-800">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-20 mt-32 max-w-[1440px] mx-auto">
+<div class="font-serif italic text-stone-300 mb-8 md:mb-0">WATCH LIST</div>
+<div class="flex gap-12 mb-12 md:mb-0">
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Privacy</a>
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Provenance</a>
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Contact</a>
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Terms</a>
+</div>
+<div class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 dark:text-stone-600">
+                © 2024 WATCH LIST. THE ARCHIVE OF EXCELLENCE.
+            </div>
+</div>
+</footer>
+</body></html>

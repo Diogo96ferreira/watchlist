@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "primary": "#000000",
+                  "surface-container-high": "#e9e8e6",
+                  "primary-container": "#1c1b1b",
+                  "surface-tint": "#5f5e5e",
+                  "surface-container-low": "#f4f3f1",
+                  "on-secondary": "#ffffff",
+                  "on-primary-fixed": "#1c1b1b",
+                  "secondary-fixed": "#ece1d2",
+                  "background": "#faf9f7",
+                  "on-surface": "#1a1c1b",
+                  "surface-container-highest": "#e3e2e0",
+                  "outline-variant": "#c4c7c7",
+                  "on-secondary-fixed-variant": "#4c463b",
+                  "tertiary-container": "#1b1c1b",
+                  "on-tertiary-container": "#848482",
+                  "on-error-container": "#93000a",
+                  "on-tertiary-fixed": "#1b1c1b",
+                  "tertiary-fixed-dim": "#c7c6c4",
+                  "surface": "#faf9f7",
+                  "on-error": "#ffffff",
+                  "surface-variant": "#e3e2e0",
+                  "tertiary": "#000000",
+                  "on-background": "#1a1c1b",
+                  "secondary-container": "#e9decf",
+                  "on-secondary-fixed": "#201b12",
+                  "inverse-on-surface": "#f1f1ef",
+                  "surface-bright": "#faf9f7",
+                  "on-surface-variant": "#444748",
+                  "on-primary-container": "#858383",
+                  "on-secondary-container": "#696255",
+                  "error": "#ba1a1a",
+                  "on-tertiary-fixed-variant": "#464746",
+                  "on-tertiary": "#ffffff",
+                  "surface-container-lowest": "#ffffff",
+                  "tertiary-fixed": "#e3e2e0",
+                  "surface-dim": "#dadad8",
+                  "primary-fixed-dim": "#c8c6c5",
+                  "on-primary-fixed-variant": "#474746",
+                  "surface-container": "#efeeec",
+                  "primary-fixed": "#e5e2e1",
+                  "secondary": "#655d51",
+                  "inverse-surface": "#2f3130",
+                  "inverse-primary": "#c8c6c5",
+                  "error-container": "#ffdad6",
+                  "on-primary": "#ffffff",
+                  "outline": "#747878",
+                  "secondary-fixed-dim": "#cfc5b6"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "margin-mobile": "20px",
+                  "gutter": "32px",
+                  "section-gap": "120px",
+                  "container-max": "1280px",
+                  "margin-desktop": "64px",
+                  "unit": "8px"
+          },
+          "fontFamily": {
+                  "headline-md": ["Noto Serif"],
+                  "label-uppercase": ["Inter"],
+                  "body-lg": ["Inter"],
+                  "stat-value": ["Noto Serif"],
+                  "display-lg": ["Noto Serif"],
+                  "title-sm": ["Noto Serif"],
+                  "body-sm": ["Inter"]
+          },
+          "fontSize": {
+                  "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                  "label-uppercase": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                  "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "stat-value": ["24px", {"lineHeight": "1", "fontWeight": "400"}],
+                  "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                  "title-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                  "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar Section -->
+<header class="bg-[#FDFCFB] dark:bg-stone-950 border-b-[0.5px] border-stone-200 dark:border-stone-800 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="font-serif text-2xl font-light tracking-[0.2em] text-stone-900 dark:text-stone-50">WATCH LIST</div>
+<nav class="hidden md:flex items-center gap-10 font-serif text-stone-900 uppercase tracking-widest text-[12px]">
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Journal</a>
+<a class="text-stone-900 dark:text-stone-50 border-b border-stone-900 dark:border-stone-50 pb-1 font-medium" href="#">Showroom</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Grails</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Vault</a>
+</nav>
+<div class="flex items-center gap-6 text-stone-900 dark:text-stone-100">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity duration-300" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity duration-300" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-8 md:px-16 pt-24 pb-32">
+<!-- Header Hero -->
+<div class="mb-24">
+<p class="font-label-uppercase text-label-uppercase text-on-surface-variant mb-4">ALGORITHMIC CURATION</p>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Taste Engine</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Recommendations shaped by your collection. Our engine analyzes your preferences for reference periods, complication density, and silhouette geometry to find your next acquisition.</p>
+</div>
+<!-- Feature Section: Your Next Watch -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-gap">
+<div class="md:col-span-7 aspect-[4/5] bg-surface-container-low relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed macro photograph of a vintage luxury stainless steel chronograph watch resting on a piece of dark textured granite. The lighting is soft and cinematic, casting delicate shadows that emphasize the brushed finish of the metal and the intricate details of the dial. The overall aesthetic is one of quiet luxury, with a palette dominated by silver, charcoal, and deep blacks, reflecting a sophisticated and timeless editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaTlhWwteMz3eA48IhNFDCk-EYGQnJ_a9ciKoXpMeU6R4qaaPWxiZ6QTmWCWSn7e47kP6VFohundo8ZlLFW7OkBvg6lRY0wQ1q3RhS6_1harcE1PwxBNUlXqLVTGvhsTcg4dpOjP4STuGu21oZ95w2XhZU5IB-Go_YhVPOS5Vc7RTphcRiREcVIgOie7mpxEPmsLKveem4oLmr7saC6ZxSzbGKo5-4Lj4fbI1mFDmRpbL0M4hv_L67F1_Xju4cj9kyxVnKihVvNSA"/>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center pl-0 md:pl-12 py-12">
+<span class="font-label-uppercase text-label-uppercase text-secondary mb-4 flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary rounded-none"></span> YOUR NEXT WATCH
+        </span>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Vacheron Constantin</h2>
+<p class="font-title-sm text-title-sm text-on-surface-variant italic mb-8">Overseas 'Deep Stream' Dual Time</p>
+<div class="p-8 border-[0.5px] border-outline-variant bg-white/50 backdrop-blur-sm mb-8">
+<p class="font-label-uppercase text-[10px] text-on-surface-variant mb-4">REASON WHY</p>
+<p class="font-body-sm text-body-sm text-on-surface italic">
+            "Your collection shows a 78% preference for integrated bracelet sports watches, specifically those with textured grey dials. The Overseas aligns with your favor for 1970s heritage silhouettes while adding the dual-time complication your current 'Vault' lacks."
+          </p>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary font-label-uppercase tracking-widest text-[11px] hover:bg-surface-tint transition-colors duration-300">
+          VIEW PROVENANCE
+        </button>
+</div>
+</section>
+<!-- Insights Grid -->
+<section class="mb-section-gap border-y-[0.5px] border-outline-variant py-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="flex flex-col">
+<p class="font-label-uppercase text-label-uppercase text-on-surface-variant mb-6">COMPOSITION PROFILE</p>
+<p class="font-stat-value text-stat-value text-primary mb-2">Strong affinity for understated steel pieces</p>
+<div class="w-full bg-surface-container h-px mt-4 mb-2"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">82% of your logged pieces feature 316L or 904L steel with brushed finishes.</p>
+</div>
+<div class="flex flex-col">
+<p class="font-label-uppercase text-label-uppercase text-on-surface-variant mb-6">SILHOUETTE PREFERENCE</p>
+<p class="font-stat-value text-stat-value text-primary mb-2">Average case size: 39.5mm</p>
+<div class="w-full bg-surface-container h-px mt-4 mb-2"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your selection history indicates a 'sweet spot' between 38mm and 41mm diameters.</p>
+</div>
+<div class="flex flex-col">
+<p class="font-label-uppercase text-label-uppercase text-on-surface-variant mb-6">COLLECTION DIRECTION</p>
+<p class="font-stat-value text-stat-value text-primary mb-2">You favor vintage divers</p>
+<div class="w-full bg-surface-container h-px mt-4 mb-2"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The engine identifies a consistent pattern of rotating bezels and high-lume markers.</p>
+</div>
+</div>
+</section>
+<!-- Secondary Recommendations Grid -->
+<section>
+<div class="flex justify-between items-end mb-12">
+<h3 class="font-headline-md text-headline-md">Alternative Matches</h3>
+<a class="font-label-uppercase text-[11px] border-b border-primary pb-1" href="#">VIEW ALL CURATIONS</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Item 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low mb-6 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional flat-lay photograph of an elegant dress watch with a minimal white dial and a thin black leather strap. The watch is positioned on a sheet of ivory-toned heavy-stock paper, surrounded by vast whitespace. The lighting is diffused and bright, creating a clean light-mode editorial aesthetic with no harsh shadows, emphasizing the thinness and high-polished finish of the case." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlwWKF7Gw7mBoVPAIo2GjeyCw1WlqaeOSyX5rlzsCtwx00XACewi1l6voqxHsHXmi_Ko5q2nx-Hw6x23OK2GejqYYBJIgjPl2_0A5WJ8z8HsWOjhU0FOy6JoKXCgtYz24Oo1IdR8yIt0HZtHm-8kYBuA_v1bCdMnmy6tIhdgR8HqsvG5SMxU4ewhAIiyfMyf-Fr4Md94BzOFeikxwhU29xDLiy0yRSFJnXgvyNvPYsx8NdSiuDalch4kNjjVhnm64hQZktTEO9v5A"/>
+</div>
+<div class="flex flex-col space-y-1">
+<p class="font-label-uppercase text-[10px] text-secondary">MATCH 94%</p>
+<h4 class="font-title-sm text-[16px] text-primary">Jaeger-LeCoultre</h4>
+<p class="font-body-sm text-on-surface-variant">Master Ultra Thin Moon</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low mb-6 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A close-up vertical shot of a modern titanium dive watch with a matte blue ceramic bezel. The watch is half-submerged in clear water, with light reflecting through the surface to create shimmering, organic patterns on the metal. The mood is cool and technical, with a focus on functional luxury. The color palette consists of deep sea blues, cold titanium greys, and crisp white luminous markers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCunjBdCa1TKnc7eaZYLvEbPXpAwWN2v3DfC7Gcfce51Rctv9ADa4-ThrhdvP2ngMkPUZs6MRkJCcPl4CmsJBUZ4Ce7ma3VE6ccNd3mChwlvntv6kC4TKgbg92ZnaZlx6Ukw5Nad70PXPqnmuMnf6s9-gWEi3pbcyPLZJsWNQkXSamlLAkm-ZHCdmNTZxOR52xmTl9rXWn44T-_dN3cXzPa0Rdq0hiwCw04uwriSgg9OtbJzNkhcOkMtaGoZZNpTnehIHLBrshxVrw"/>
+</div>
+<div class="flex flex-col space-y-1">
+<p class="font-label-uppercase text-[10px] text-secondary">MATCH 89%</p>
+<h4 class="font-title-sm text-[16px] text-primary">Tudor</h4>
+<p class="font-body-sm text-on-surface-variant">Pelagos 39 Titanium</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low mb-6 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A high-contrast macro shot of a complex perpetual calendar watch movement visible through a sapphire caseback. The gears and rubies are rendered with surgical precision against a dark, velvet-like background. Soft spotlighting highlights the hand-finished anglage and perlage. The aesthetic is extremely sophisticated and analytical, celebrating the mechanical artistry of haute horlogerie." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD7Q5Df9YUBHUEfrtdy_LyxN1cbtWek3F3xCYWIUSJYpLJpe5_sF7l3_fSmHnoAPytHr--KCUQuuCLe_zTW4t4O8yMsYKPvfvxzQQpceg9AB4SHAFZikxzCdF9hdFuhKWYFtECAAw54gTWmIKWSu2KbWjpRYarmmynFO3M0pvUpG37J-DdsB1YozISSgzqfiKlqvKI2gFM9ZsF8MtKMaZ75RmNhpZmJwGVIEC7IieWhpYRmJHJFid5N80LGNs18qTNEVS-AiB2zig"/>
+</div>
+<div class="flex flex-col space-y-1">
+<p class="font-label-uppercase text-[10px] text-secondary">MATCH 86%</p>
+<h4 class="font-title-sm text-[16px] text-primary">A. Lange &amp; Söhne</h4>
+<p class="font-body-sm text-on-surface-variant">Saxonia Thin</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low mb-6 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A moody, high-end editorial shot of an iconic square-faced gold luxury watch with a blue leather strap. The watch is placed on a stack of architectural magazines. The lighting is low-key and directional, highlighting the geometric perfection of the gold case and the deep sapphire tones of the strap. The vibe is artistic and intellectual, consistent with a high-end lifestyle publication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu7K_B4X56kUn4LReUybCyiB-KiV25JRG43Vs4LtRWgQcfxbK_hW4RpFyOJ8C3aBJUy8FQ2FhvFgE3QlfGUpxDFee6DGp7xn0ERXzf-5r8zONjhsh7wuaTyKYebyh95LLT4OEFzoBS7Vy-qrdmNO-bBkDAm5hQ5LCHyIe6vhT8UlCRFe6RUJHUOAMq-56QG4LScYjfN9ko-fSxxsz6uRcQf1P-NpD3XAuka7Qg6IiTAliuOc2UbF2iV1qTb3Qo39kENHUFZ7hRc4U"/>
+</div>
+<div class="flex flex-col space-y-1">
+<p class="font-label-uppercase text-[10px] text-secondary">MATCH 82%</p>
+<h4 class="font-title-sm text-[16px] text-primary">Cartier</h4>
+<p class="font-body-sm text-on-surface-variant">Santos de Cartier Large</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="bg-[#FDFCFB] dark:bg-stone-950 border-t-[0.5px] border-stone-200 dark:border-stone-800">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-20 mt-32 max-w-[1440px] mx-auto">
+<div class="font-serif italic text-stone-300 mb-8 md:mb-0">WATCH LIST</div>
+<div class="flex gap-12 font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 dark:text-stone-600 mb-8 md:mb-0">
+<a class="hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Privacy</a>
+<a class="hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Provenance</a>
+<a class="hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Contact</a>
+<a class="hover:text-stone-900 dark:hover:text-stone-300 transition-colors" href="#">Terms</a>
+</div>
+<div class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 dark:text-stone-600 opacity-80">
+        © 2024 WATCH LIST. THE ARCHIVE OF EXCELLENCE.
+      </div>
+</div>
+</footer>
+</body></html>

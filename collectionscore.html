@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#000000",
+                    "surface-container-high": "#e9e8e6",
+                    "primary-container": "#1c1b1b",
+                    "surface-tint": "#5f5e5e",
+                    "surface-container-low": "#f4f3f1",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#1c1b1b",
+                    "secondary-fixed": "#ece1d2",
+                    "background": "#faf9f7",
+                    "on-surface": "#1a1c1b",
+                    "surface-container-highest": "#e3e2e0",
+                    "outline-variant": "#c4c7c7",
+                    "on-secondary-fixed-variant": "#4c463b",
+                    "tertiary-container": "#1b1c1b",
+                    "on-tertiary-container": "#848482",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#1b1c1b",
+                    "tertiary-fixed-dim": "#c7c6c4",
+                    "surface": "#faf9f7",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e3e2e0",
+                    "tertiary": "#000000",
+                    "on-background": "#1a1c1b",
+                    "secondary-container": "#e9decf",
+                    "on-secondary-fixed": "#201b12",
+                    "inverse-on-surface": "#f1f1ef",
+                    "surface-bright": "#faf9f7",
+                    "on-surface-variant": "#444748",
+                    "on-primary-container": "#858383",
+                    "on-secondary-container": "#696255",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#464746",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#e3e2e0",
+                    "surface-dim": "#dadad8",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-container": "#efeeec",
+                    "primary-fixed": "#e5e2e1",
+                    "secondary": "#655d51",
+                    "inverse-surface": "#2f3130",
+                    "inverse-primary": "#c8c6c5",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "outline": "#747878",
+                    "secondary-fixed-dim": "#cfc5b6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "section-gap": "120px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Noto Serif"],
+                    "label-uppercase": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "stat-value": ["Noto Serif"],
+                    "display-lg": ["Noto Serif"],
+                    "title-sm": ["Noto Serif"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "label-uppercase": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "stat-value": ["24px", {"lineHeight": "1", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "title-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #faf9f7;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#FDFCFB] dark:bg-stone-950 border-b-[0.5px] border-stone-200 dark:border-stone-800 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="font-serif text-2xl font-light tracking-[0.2em] text-stone-900 dark:text-stone-50 uppercase">WATCH LIST</div>
+<nav class="hidden md:flex items-center space-x-12">
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Journal</a>
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Showroom</a>
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Grails</a>
+<a class="font-serif text-stone-900 uppercase tracking-widest text-stone-900 dark:text-stone-50 border-b border-stone-900 dark:border-stone-50 pb-1 font-medium" href="#">Vault</a>
+</nav>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-stone-900 cursor-pointer hover:opacity-70 transition-opacity duration-300" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-stone-900 cursor-pointer hover:opacity-70 transition-opacity duration-300" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-8 py-20">
+<!-- Hero Section -->
+<section class="mb-section-gap flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="md:w-1/2">
+<h2 class="font-label-uppercase text-label-uppercase text-on-surface-variant mb-4 uppercase">Collection Score</h2>
+<h1 class="font-display-lg text-display-lg text-primary mb-8 max-w-lg">The Architecture of Your Archive</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-md">An empirical evaluation of your horological pursuit, measured through the lens of provenance, rarity, and curated consistency.</p>
+</div>
+<!-- Central Score Visualizer -->
+<div class="md:w-1/2 flex justify-center relative">
+<div class="relative w-80 h-80 flex items-center justify-center">
+<!-- SVG Dial -->
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle class="text-surface-container-highest" cx="160" cy="160" fill="none" r="140" stroke="currentColor" stroke-width="0.5"></circle>
+<circle class="text-primary transition-all duration-1000 ease-out" cx="160" cy="160" fill="none" r="140" stroke="currentColor" stroke-dasharray="880" stroke-dashoffset="158.4" stroke-width="2"></circle>
+</svg>
+<div class="text-center">
+<div class="font-display-lg text-[120px] leading-none text-primary font-light">82</div>
+<div class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase mt-2">Curated Score</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Breakdown Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-section-gap">
+<!-- Diversity -->
+<div class="p-8 border border-stone-200 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all hover:shadow-[0_4px_30px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-start mb-12">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Diversity</span>
+<span class="font-stat-value text-stat-value text-primary">74</span>
+</div>
+<div class="space-y-4">
+<div class="h-[1px] w-full bg-surface-container-highest relative">
+<div class="absolute left-0 top-0 h-[1px] bg-primary w-[74%]"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Broad span of complications and styles from across the horological spectrum.</p>
+</div>
+</div>
+<!-- Consistency -->
+<div class="p-8 border border-stone-200 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all hover:shadow-[0_4px_30px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-start mb-12">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Consistency</span>
+<span class="font-stat-value text-stat-value text-primary">91</span>
+</div>
+<div class="flex items-center space-x-1">
+<div class="w-full grid grid-cols-10 gap-1">
+<div class="h-8 bg-primary"></div>
+<div class="h-8 bg-primary"></div>
+<div class="h-8 bg-primary"></div>
+<div class="h-8 bg-primary"></div>
+<div class="h-8 bg-primary"></div>
+<div class="h-8 bg-primary"></div>
+<div class="h-8 bg-primary"></div>
+<div class="h-8 bg-primary"></div>
+<div class="h-8 bg-primary"></div>
+<div class="h-8 bg-surface-container-highest"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-4">A clear narrative and thematic focus throughout your selected references.</p>
+</div>
+<!-- Rarity -->
+<div class="p-8 border border-stone-200 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all hover:shadow-[0_4px_30px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-start mb-12">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Rarity</span>
+<span class="font-stat-value text-stat-value text-primary">65</span>
+</div>
+<div class="relative h-12 flex items-center justify-center">
+<div class="w-full h-[0.5px] bg-stone-200"></div>
+<div class="absolute w-3 h-3 rounded-full border border-primary bg-white left-[65%] -translate-x-1/2"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-4">Presence of limited editions and low-production vintage references.</p>
+</div>
+<!-- Condition -->
+<div class="p-8 border border-stone-200 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all hover:shadow-[0_4px_30px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-start mb-12">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Condition</span>
+<span class="font-stat-value text-stat-value text-primary">88</span>
+</div>
+<div class="flex space-x-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-container-highest"></span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-4">Exceptional preservation and full-set provenance for majority of the vault.</p>
+</div>
+<!-- Personal Significance -->
+<div class="p-8 border border-stone-200 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all hover:shadow-[0_4px_30px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-start mb-12">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Personal Significance</span>
+<span class="font-stat-value text-stat-value text-primary">95</span>
+</div>
+<div class="flex items-end h-12 space-x-1">
+<div class="w-2 bg-stone-100 h-2"></div>
+<div class="w-2 bg-stone-200 h-4"></div>
+<div class="w-2 bg-stone-300 h-6"></div>
+<div class="w-2 bg-stone-400 h-8"></div>
+<div class="w-2 bg-stone-900 h-10"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-4">Deeply rooted stories and sentimental milestones attached to the archive.</p>
+</div>
+<!-- Promotion Card -->
+<div class="p-8 bg-primary flex flex-col justify-between group cursor-pointer">
+<div class="font-label-uppercase text-label-uppercase text-on-primary-container uppercase">Archive Analysis</div>
+<h3 class="font-title-sm text-title-sm text-white mt-4">Refine your curation to reach 'Archivist' status.</h3>
+<div class="mt-8 flex items-center text-white font-label-uppercase text-[10px] tracking-widest uppercase group-hover:translate-x-2 transition-transform">
+                    Review Portfolio <span class="material-symbols-outlined ml-2 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Status Badges Section -->
+<section class="border-t border-stone-200 pt-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<h2 class="font-label-uppercase text-label-uppercase text-on-surface-variant mb-4 uppercase">Horological Standing</h2>
+<h3 class="font-headline-md text-headline-md text-primary">Prestigious Tiers</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary max-w-sm">Recognition of your commitment to excellence and the preservation of watchmaking history.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Collector -->
+<div class="p-10 border border-stone-100 flex flex-col items-center text-center opacity-40 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-4xl mb-6 font-thin" data-icon="drafts">drafts</span>
+<h4 class="font-title-sm text-title-sm text-primary mb-2">Collector</h4>
+<div class="flex items-center space-x-2">
+<span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+<span class="font-label-uppercase text-[10px] text-stone-500 uppercase">Tier 1</span>
+</div>
+</div>
+<!-- Enthusiast -->
+<div class="p-10 border border-stone-100 flex flex-col items-center text-center opacity-40 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-4xl mb-6 font-thin" data-icon="diamond">diamond</span>
+<h4 class="font-title-sm text-title-sm text-primary mb-2">Enthusiast</h4>
+<div class="flex items-center space-x-2">
+<span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+<span class="font-label-uppercase text-[10px] text-stone-500 uppercase">Tier 2</span>
+</div>
+</div>
+<!-- Connoisseur -->
+<div class="p-10 border-2 border-primary bg-white flex flex-col items-center text-center shadow-lg relative">
+<div class="absolute -top-3 bg-primary text-white px-3 py-1 font-label-uppercase text-[9px] uppercase tracking-tighter">Current Status</div>
+<span class="material-symbols-outlined text-4xl mb-6 font-thin text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h4 class="font-title-sm text-title-sm text-primary mb-2 font-semibold">Connoisseur</h4>
+<div class="flex items-center space-x-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span class="font-label-uppercase text-[10px] text-primary uppercase">Tier 3</span>
+</div>
+</div>
+<!-- Archivist -->
+<div class="p-10 border border-stone-100 flex flex-col items-center text-center opacity-20 transition-all">
+<span class="material-symbols-outlined text-4xl mb-6 font-thin" data-icon="museum">museum</span>
+<h4 class="font-title-sm text-title-sm text-primary mb-2">Archivist</h4>
+<div class="flex items-center space-x-2">
+<span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+<span class="font-label-uppercase text-[10px] text-stone-500 uppercase">Ultimate Tier</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Insight -->
+<section class="mt-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="aspect-[4/5] bg-stone-100 overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="A macro close-up of a luxury Swiss watch movement with intricate gears and polished steel plates. The lighting is soft and focused, creating a dramatic interplay of light and shadow on the metallic surfaces. The aesthetic is extremely high-end and minimalist, evocative of a prestigious horology magazine layout with a neutral, ivory-toned background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNN1hyKf7FR_FjblGR_c2_JuC4KGPFvrUs0B8idjXsoVbD-HaLupWCEuN7Nh_apJJcOX0XtSPWnz48Ph56B96O9cMZCfEJctXvnTYquC3cAEmkNuuqfncyZv6VyCBEj_ePsNyO4eBMRVQGX4T0yV9l2LAJCMaoVH7pzt5p8ymFijmf7pBqXLVn-FvZk9YXoplI7dRP7enoGYnl3_LnTfZQhzlKtfIzt1W0IorpCJ4UCHCoOhsLltTyFlAwT0IE3NmXkdZ9XewCYRk"/>
+</div>
+<div>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase mb-4 block">The Curator's Note</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-8 leading-tight italic">"True value is not found in the acquisition of many, but in the meticulous selection of the essential."</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-12">Your collection exhibits a rare level of maturity. By focusing on provenance and historical significance over market trends, you have built an archive that speaks to the soul of watchmaking. To reach the rank of Archivist, consider diversifying the eras represented in your vault.</p>
+<button class="px-12 py-5 bg-primary text-white font-label-uppercase text-label-uppercase uppercase tracking-widest hover:bg-stone-800 transition-all duration-300">Expand Perspective</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#FDFCFB] dark:bg-stone-950 border-t-[0.5px] border-stone-200 dark:border-stone-800">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-20 mt-32 max-w-[1440px] mx-auto">
+<div class="font-serif italic text-stone-300 text-xl mb-8 md:mb-0">WATCH LIST.</div>
+<div class="flex space-x-12 mb-8 md:mb-0">
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 transition-colors" href="#">Privacy</a>
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 transition-colors" href="#">Provenance</a>
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 transition-colors" href="#">Contact</a>
+<a class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400 hover:text-stone-900 transition-colors" href="#">Terms</a>
+</div>
+<div class="font-sans text-[10px] uppercase tracking-[0.15em] text-stone-400">© 2024 WATCH LIST. THE ARCHIVE OF EXCELLENCE.</div>
+</div>
+</footer>
+</body></html>
