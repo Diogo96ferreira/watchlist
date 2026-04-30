@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import WatchLoader from "./WatchLoader";
 
 const INTRO_DURATION_MS = 2200;
 
@@ -71,21 +72,7 @@ function EntryLoaderOverlay({ isExiting }: { isExiting: boolean }) {
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(233,222,207,0.62),transparent_30%),linear-gradient(180deg,#fbfaf7_0%,#f5f1eb_100%)]" />
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
-        <div className="entry-loader-watch">
-          <div className="entry-loader-watch__bezel" />
-          <div className="entry-loader-watch__dial">
-            <div className="entry-loader-watch__ticks" />
-            <div className="entry-loader-watch__subdial entry-loader-watch__subdial--left" />
-            <div className="entry-loader-watch__subdial entry-loader-watch__subdial--right" />
-            <div className="entry-loader-watch__brand">
-              <span>Patek Philippe</span>
-              <span>Geneve</span>
-            </div>
-            <div className="entry-loader-watch__hand entry-loader-watch__hand--seconds" />
-            <div className="entry-loader-watch__hand entry-loader-watch__hand--minute" />
-            <div className="entry-loader-watch__pin" />
-          </div>
-        </div>
+        <WatchLoader className="entry-loader-watch" bg="/loader.png" />
         <p className="mt-10 text-[11px] font-semibold uppercase tracking-[0.36em] text-[var(--muted)]">
           Preparing the catalogue
         </p>
