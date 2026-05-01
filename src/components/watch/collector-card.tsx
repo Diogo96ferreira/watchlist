@@ -31,12 +31,12 @@ export function CollectorCard({ collector }: { collector: CollectorPreview }) {
       <p className="mb-8 text-sm leading-7 text-[var(--muted)] italic">
         {collector.statement}
       </p>
-      <div className="mb-8 grid grid-cols-3 gap-3">
+      <div className="mb-8 grid grid-cols-3 gap-4">
         {collector.previewWatchIds.map((watchId) => {
           const watch = getWatchById(watchId);
           return (
-            <div key={watchId} className="editorial-card p-3">
-              {watch ? <WatchMedia watch={watch} className="h-24 w-full" sizes="160px" /> : null}
+            <div key={watchId} className="editorial-card p-4">
+              {watch ? <WatchMedia watch={watch} className="h-36 w-full" sizes="220px" /> : null}
               <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[var(--muted)]">
                 {watch?.brand}
               </p>

@@ -18,6 +18,18 @@ function resolveSection(currentPath: string): NavSection {
   return getRouteFlow(currentPath)?.section ?? "Vault";
 }
 
+function resolveHeaderLabel(currentPath: string, currentSection: NavSection) {
+  if (currentPath === "/") {
+    return "Community";
+  }
+
+  if (currentPath.startsWith("/manuel-canelas-pais") || /^\/[^/]+$/.test(currentPath)) {
+    return "Collector Profile";
+  }
+
+  return currentSection;
+}
+
 export function Shell({
   children,
   currentPath,
@@ -28,6 +40,7 @@ export function Shell({
   immersive?: boolean;
 }) {
   const currentSection = resolveSection(currentPath);
+  const headerLabel = resolveHeaderLabel(currentPath, currentSection);
   const shellRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const ambientRef = useRef<HTMLDivElement>(null);
@@ -95,12 +108,12 @@ export function Shell({
         )}
       >
         <div className="page-frame flex items-center justify-between py-6">
-          <Link href="/manuel-canelas-pais" className="font-serif text-2xl tracking-[0.18em]">
+          <Link href="/" className="font-serif text-2xl tracking-[0.18em]">
             WATCH LIST
           </Link>
           <AppNavigation currentSection={currentSection} />
           <div className="hidden text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--muted)] md:block">
-            {currentSection === "Public" ? "Public Profile" : currentSection}
+            {headerLabel}
           </div>
         </div>
       </header>

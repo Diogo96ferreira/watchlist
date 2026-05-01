@@ -59,6 +59,49 @@ export type RecommendationEntry = {
   primary?: boolean;
 };
 
+export type CommunityFeedEntry = {
+  id: string;
+  actorName: string;
+  actorUsername: string;
+  actorAvatarUrl: string;
+  action: "Collection Update" | "Wishlist Move" | "Grail Call" | "Appreciation" | "Comment";
+  title: string;
+  body: string;
+  href: string;
+  watchId?: string;
+  timestamp: string;
+};
+
+export type CommunityRatingEntry = {
+  id: string;
+  collectionLabel: string;
+  collectorName: string;
+  metrics: Array<{
+    label: "Cohesion" | "Originality" | "Wearability" | "Depth" | "Grail Strength";
+    value: number;
+  }>;
+  note: string;
+};
+
+export type CommunityCommentEntry = {
+  id: string;
+  authorName: string;
+  authorUsername: string;
+  authorAvatarUrl: string;
+  targetLabel: string;
+  comment: string;
+  href: string;
+  timestamp: string;
+};
+
+export type CommunityNewsEntry = {
+  id: string;
+  title: string;
+  label: string;
+  summary: string;
+  href: string;
+};
+
 export type TimelineEvent = {
   id: string;
   year: number;
@@ -730,6 +773,143 @@ export const journalStories = [
     title: "Similar Collectors",
     route: "/app/similar-collectors",
     summary: "Quiet social discovery for collectors whose instincts feel closely aligned with yours.",
+  },
+];
+
+export const communityFeed: CommunityFeedEntry[] = [
+  {
+    id: "feed-1",
+    actorName: "Manuel Canelas Pais",
+    actorUsername: "manuel-canelas-pais",
+    actorAvatarUrl: collectorAvatarMap["manuel-canelas-pais"],
+    action: "Wishlist Move",
+    title: "Moved the Omega Seamaster 300M to the top of the active wishlist.",
+    body: "A platform update should show not just what someone owns, but what they are actively prioritising next.",
+    href: "/app/taste-engine",
+    watchId: "omega-seamaster-300m",
+    timestamp: "12 minutes ago",
+  },
+  {
+    id: "feed-2",
+    actorName: "Adrian Thorne",
+    actorUsername: "adrian-thorne",
+    actorAvatarUrl: collectorAvatarMap["adrian-thorne"],
+    action: "Appreciation",
+    title: "Left an appreciation on a compact steel-first collection.",
+    body: "The strongest community loops should feel like thoughtful collector notes, not empty likes.",
+    href: "/app/appreciations",
+    watchId: "tissot-gentleman-powermatic-80",
+    timestamp: "34 minutes ago",
+  },
+  {
+    id: "feed-3",
+    actorName: "Julian Mercer",
+    actorUsername: "julian-mercer",
+    actorAvatarUrl: collectorAvatarMap["julian-mercer"],
+    action: "Comment",
+    title: "Commented on the role of tool-watch energy inside a dress-leaning archive.",
+    body: "Community conversation works best when it is attached to real collection decisions and taste tradeoffs.",
+    href: "/app/journal",
+    watchId: "mido-ocean-star-39",
+    timestamp: "1 hour ago",
+  },
+  {
+    id: "feed-4",
+    actorName: "Elena Rossi",
+    actorUsername: "elena-rossi",
+    actorAvatarUrl: collectorAvatarMap["elena-rossi"],
+    action: "Grail Call",
+    title: "Marked one watch as the singular grail above the rest of the wishlist.",
+    body: "The grail should feel categorically different from a normal target: less next purchase, more defining horizon.",
+    href: "/app/grail-ceremony",
+    watchId: "vacheron-constantin-fiftysix-complete-calendar",
+    timestamp: "3 hours ago",
+  },
+];
+
+export const communityRatings: CommunityRatingEntry[] = [
+  {
+    id: "rating-1",
+    collectionLabel: "Measured Modernist",
+    collectorName: "Manuel Canelas Pais",
+    metrics: [
+      { label: "Cohesion", value: 91 },
+      { label: "Originality", value: 74 },
+      { label: "Wearability", value: 88 },
+      { label: "Depth", value: 68 },
+      { label: "Grail Strength", value: 94 },
+    ],
+    note: "A tight collection logic with a very clear north star, even before the grail is acquired.",
+  },
+  {
+    id: "rating-2",
+    collectionLabel: "The Purist",
+    collectorName: "Adrian Thorne",
+    metrics: [
+      { label: "Cohesion", value: 95 },
+      { label: "Originality", value: 71 },
+      { label: "Wearability", value: 84 },
+      { label: "Depth", value: 72 },
+      { label: "Grail Strength", value: 90 },
+    ],
+    note: "A disciplined archive where every acquisition already feels filtered through long-term taste.",
+  },
+];
+
+export const communityComments: CommunityCommentEntry[] = [
+  {
+    id: "comment-1",
+    authorName: "Elena Moretti",
+    authorUsername: "elena-moretti",
+    authorAvatarUrl: collectorAvatarMap["elena-moretti"],
+    targetLabel: "Manuel's active wishlist",
+    comment: "The platform should let a collector say: I like your wishlist, but your grail is where your taste really becomes clear.",
+    href: "/app/appreciations",
+    timestamp: "18 minutes ago",
+  },
+  {
+    id: "comment-2",
+    authorName: "Marcus Vane",
+    authorUsername: "marcus-vane",
+    authorAvatarUrl: collectorAvatarMap["marcus-vane"],
+    targetLabel: "Julian's steel sports rotation",
+    comment: "Ratings become interesting when they are structured. Cohesion and wearability tell me more than a generic score ever could.",
+    href: "/app/collection-score",
+    timestamp: "52 minutes ago",
+  },
+  {
+    id: "comment-3",
+    authorName: "Julian Thorne",
+    authorUsername: "julian-thorne",
+    authorAvatarUrl: collectorAvatarMap["julian-thorne"],
+    targetLabel: "A grail ceremony post",
+    comment: "A grail is the watch that explains the collection, not just the watch with the highest price.",
+    href: "/app/grail-ceremony",
+    timestamp: "2 hours ago",
+  },
+];
+
+export const communityNews: CommunityNewsEntry[] = [
+  {
+    id: "news-1",
+    label: "New Model",
+    title: "Collectors are bookmarking compact steel sports references again.",
+    summary: "A live community homepage should surface what people are adding to watchlists right now, not just static profile data.",
+    href: "/app/taste-engine",
+  },
+  {
+    id: "news-2",
+    label: "Community Pick",
+    title: "This week's strongest grail signal is still the Vacheron Fiftysix.",
+    summary: "Good community design makes it obvious when a watch has moved beyond wishlist status and become a true grail.",
+    href: "/app/grails",
+  },
+  {
+    id: "news-3",
+    label: "Conversation",
+    title: "Structured collection ratings are outperforming generic likes.",
+    summary: "Collectors respond better to cohesion, originality and wearability than to empty vanity metrics.",
+    href: "/app/collection-score",
   },
 ];
 

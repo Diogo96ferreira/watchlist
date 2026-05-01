@@ -102,10 +102,10 @@ export function HomeHero({ watch }: { watch: WatchEntry }) {
               Create your vault
             </Link>
             <Link
-              href="/manuel-canelas-pais"
+              href="/app/similar-collectors"
               className="border-b border-[var(--foreground)] pb-1 text-[11px] font-semibold uppercase tracking-[0.24em]"
             >
-              Explore collections
+              Explore collectors
             </Link>
           </div>
         </div>
