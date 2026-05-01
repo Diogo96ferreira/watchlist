@@ -11,6 +11,7 @@
   --outline-strong: #747878;
   --muted: #6d675e;
   --primary: #171717;
+  --loader-accent: #59626b;
   --secondary: #e9decf;
   --shadow: 0 18px 48px rgba(20, 20, 18, 0.05);
 }
@@ -307,6 +308,138 @@ button {
   aspect-ratio: 1;
 }
 
+.entry-loader-overlay {
+  background: var(--loader-accent);
+}
+
+.entry-loader-overlay__dial-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(244, 246, 248, 0.08), rgba(36, 40, 45, 0.26)),
+    linear-gradient(180deg, #6a737d 0%, #515a63 100%);
+}
+
+.entry-loader-overlay__home-bloom {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 40% 35%, rgba(255, 252, 246, 0.34), rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, #fbfaf7 0%, #f8f6f2 100%);
+  transform: translate(-50%, -50%) scale(0.08);
+  opacity: 0;
+}
+
+.entry-loader-overlay--exiting .entry-loader-overlay__home-bloom {
+  animation: entryLoaderBloom 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.entry-loader-overlay--exiting .entry-loader-ap,
+.entry-loader-overlay--exiting .entry-loader-overlay__dial-wash,
+.entry-loader-overlay--exiting p {
+  animation: entryLoaderFadeAway 0.55s ease forwards;
+}
+
+.entry-loader-ap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(82vw, 27rem);
+  aspect-ratio: 1;
+  perspective: 1200px;
+}
+
+.entry-loader-ap__halo {
+  position: absolute;
+  inset: 7%;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.28), rgba(210, 218, 226, 0.12) 52%, transparent 70%);
+  filter: blur(34px);
+  opacity: 0.72;
+}
+
+.entry-loader-ap__frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.2);
+}
+
+.entry-loader-ap__image {
+  object-fit: contain;
+  transform: scale(1.08);
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 28px 52px rgba(0, 0, 0, 0.34));
+}
+
+.entry-loader-ap__hands-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.entry-loader-ap__hands {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.entry-loader-ap__hand {
+  position: absolute;
+  inset: 0;
+  transform: rotate(0deg);
+}
+
+.entry-loader-ap__hand::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: translate(var(--entry-loader-pivot-offset-x, 0%), var(--entry-loader-pivot-offset-y, 0%));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.16));
+}
+
+.entry-loader-ap__hand--hour {
+  --entry-loader-pivot-offset-x: -0.43%;
+  --entry-loader-pivot-offset-y: 1.68%;
+}
+
+.entry-loader-ap__hand--hour::before {
+  background-image: url("/images/loading/ap-clean/APRoyalOakhour.png");
+}
+
+.entry-loader-ap__hand--minute {
+  --entry-loader-pivot-offset-x: -0.73%;
+  --entry-loader-pivot-offset-y: 1.72%;
+}
+
+.entry-loader-ap__hand--minute::before {
+  background-image: url("/images/loading/ap-clean/APRoyalOakminute.png");
+}
+
+.entry-loader-ap__hand--seconds {
+  --entry-loader-pivot-offset-x: -0.35%;
+  --entry-loader-pivot-offset-y: 1.69%;
+  transition: transform 0.18s linear;
+}
+
+.entry-loader-ap__hand--seconds::before {
+  background-image: url("/images/loading/ap-clean/APRoyalOakseconds.png");
+}
+
 .entry-loader-watch::before {
   content: "";
   position: absolute;
@@ -591,6 +724,10 @@ button {
   .entry-loader-watch {
     width: min(82vw, 21rem);
   }
+
+  .entry-loader-ap {
+    width: min(84vw, 21rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -645,5 +782,35 @@ button {
 
   to {
     transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes entryLoaderBloom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.08);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(40);
+  }
+}
+
+@keyframes entryLoaderFadeAway {
+  from {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.985);
   }
 }

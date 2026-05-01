@@ -24,14 +24,35 @@ export function useGsap(callback: () => void | (() => void), deps: DependencyLis
       registered = true;
     }
 
+    const shouldWaitForIntro = document.body?.dataset.entryIntroState === "pending";
     let cleanup: void | (() => void);
-    const context = gsap.context(() => {
-      cleanup = callback();
-    });
+    let context: gsap.Context | null = null;
+
+    const runAnimation = () => {
+      context = gsap.context(() => {
+        cleanup = callback();
+      });
+    };
+
+    if (shouldWaitForIntro) {
+      const onIntroReady = () => {
+        runAnimation();
+      };
+
+      window.addEventListener("watchlist:intro-ready", onIntroReady, { once: true });
+
+      return () => {
+        window.removeEventListener("watchlist:intro-ready", onIntroReady);
+        cleanup?.();
+        context?.revert();
+      };
+    }
+
+    runAnimation();
 
     return () => {
       cleanup?.();
-      context.revert();
+      context?.revert();
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
